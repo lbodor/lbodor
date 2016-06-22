@@ -1,3 +1,5 @@
+[alias]
+    one = show -s --pretty='format:%h (%s)'
 [user]
 	name = Lazar Bodor
 [pull]
