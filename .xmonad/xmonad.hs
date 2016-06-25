@@ -1,6 +1,7 @@
 import XMonad
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.SetWMName
 import XMonad.Layout.NoBorders
 import XMonad.Util.EZConfig (additionalKeys)
 import XMonad.Util.Run (spawnPipe)
@@ -13,6 +14,7 @@ main = do
         { terminal = "xterm -sl 1000"
         , manageHook = manageDocks <+> manageHook defaultConfig
         , layoutHook = avoidStruts $ smartBorders $ layoutHook defaultConfig
+        , startupHook = setWMName "LG3D" -- java swing
         , logHook = dynamicLogWithPP xmobarPP
 			{ ppOutput = hPutStrLn xmproc
 			, ppTitle = xmobarColor "grey" "" . shorten 53
