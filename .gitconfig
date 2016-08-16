@@ -4,3 +4,5 @@
 	name = Lazar Bodor
 [pull]
     rebase = true
+[push]
+	default = simple
