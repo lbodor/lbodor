@@ -1,5 +1,12 @@
 export EDITOR=nvim
-export PS1="\[\033[1;32m\]\u@\h:\w\$\[\033[0m\] "
+prompt_command () {
+    if [ "${IN_NIX_SHELL}" ]; then
+        PS1='nix-shell $(basename $(dirname "$PWD"))/$(basename "$PWD")$ '
+    else
+        PS1='$(basename $(dirname "$PWD"))/$(basename "$PWD")$ '
+    fi
+}
+PROMPT_COMMAND=prompt_command
 alias ls='ls --color=auto'
 alias vi=nvim
 alias vg='nvim -c Gstatus .'
