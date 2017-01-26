@@ -8,17 +8,18 @@ import XMonad.Util.Run (spawnPipe)
 import Graphics.X11.ExtraTypes.XF86
 import System.IO (hPutStrLn)
 
+main :: IO ()
 main = do
     xmproc <- spawnPipe "xmobar"
-    xmonad $ defaultConfig
+    xmonad $ def
         { terminal = "xterm -sl 1000"
-        , manageHook = manageDocks <+> manageHook defaultConfig
-        , layoutHook = avoidStruts $ smartBorders $ layoutHook defaultConfig
+        , manageHook = manageDocks <+> manageHook def
+        , layoutHook = avoidStruts $ smartBorders $ layoutHook def
         , startupHook = setWMName "LG3D" -- java swing
         , logHook = dynamicLogWithPP xmobarPP
-			{ ppOutput = hPutStrLn xmproc
-			, ppTitle = xmobarColor "grey" "" . shorten 53
-			}
+            { ppOutput = hPutStrLn xmproc
+            , ppTitle = xmobarColor "grey" "" . shorten 53
+            }
         , focusedBorderColor = "#2b6651"
         , normalBorderColor = "#1d1f21"
         } `additionalKeys`
