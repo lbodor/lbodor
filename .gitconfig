@@ -1,7 +1,8 @@
 [alias]
     one = show -s --pretty='format:%h (%s)'
 [user]
-	name = Lazar Bodor
+	name = lbodor
+	email = lazar.bodor@ga.gov.au
 [pull]
     rebase = true
 [push]
