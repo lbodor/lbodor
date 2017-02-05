@@ -1,5 +1,6 @@
 [alias]
     one = show -s --pretty='format:%h (%s)'
+    pr = pull-request
 [user]
 	name = lbodor
 	email = lazar.bodor@ga.gov.au
