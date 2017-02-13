@@ -11,4 +11,5 @@ alias ls='ls --color=auto'
 alias vi=nvim
 alias vg='nvim -c Gstatus .'
 alias tmux='tmux -2'
+alias vivaldi='vivaldi --force-device-scale-factor=1.44'
 . ~/dev/fzf-extras/fzf-extras.sh
